@@ -11,30 +11,53 @@
 
 @switch (diceValue()) {
   @case (1) {
-    <p>Dice rolled 1</p>
+    <p>Dice rolled <fa-icon [icon]="diceOneIcon"></fa-icon> 1</p>
   }
 
   @case (2) {
-    <p>Dice rolled 2</p>
+    <p>Dice rolled <fa-icon [icon]="diceTwoIcon"></fa-icon> 2</p>
   }
 
   @case (3) {
-    <p>Dice rolled 3</p>
+    <p>Dice rolled <fa-icon [icon]="diceThreeIcon"></fa-icon> 3</p>
   }
 
   @case (4) {
-    <p>Dice rolled 4</p>
+    <p>Dice rolled <fa-icon [icon]="diceFourIcon"></fa-icon> 4</p>
   }
 
   @case (5) {
-    <p>Dice rolled 5</p>
+    <p>Dice rolled <fa-icon [icon]="diceFiveIcon"></fa-icon> 5</p>
   }
 
   @case (6) {
-    <p>Dice rolled 6</p>
+    <p>Dice rolled <fa-icon [icon]="diceSixIcon"></fa-icon> 6</p>
   }
 
   @default {
-    <p>Roll the dice!</p>
+    <p>Roll the dice! <fa-icon [icon]="diceIcon"></fa-icon></p>
   }
 }
+
+<hr/>
+
+<div class="row">
+  <div class="col-2">
+    <fa-icon [icon]="diceOneIcon"></fa-icon> 1: {{oneCount()}}
+  </div>
+  <div class="col-2">
+    <fa-icon [icon]="diceTwoIcon"></fa-icon> 2: {{twoCount()}}
+  </div>
+  <div class="col-2">
+    <fa-icon [icon]="diceThreeIcon"></fa-icon> 3: {{threeCount()}}
+  </div>
+  <div class="col-2">
+    <fa-icon [icon]="diceFourIcon"></fa-icon> 4: {{fourCount()}}
+  </div>
+  <div class="col-2">
+    <fa-icon [icon]="diceFiveIcon"></fa-icon> 5: {{fiveCount()}}
+  </div>
+  <div class="col-2">
+    6 <fa-icon [icon]="diceSixIcon"></fa-icon>: {{sixCount()}}
+  </div>
+</div>
