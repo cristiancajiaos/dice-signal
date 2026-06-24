@@ -1,0 +1,40 @@
+<button class="btn btn-primary" (click)="rollDice()">
+  <fa-icon [icon]="diceIcon"></fa-icon>
+  Roll Dice
+</button>
+
+<hr/>
+
+<p>Value: {{diceValue()}}</p>
+
+<hr/>
+
+@switch (diceValue()) {
+  @case (1) {
+    <p>Dice rolled 1</p>
+  }
+
+  @case (2) {
+    <p>Dice rolled 2</p>
+  }
+
+  @case (3) {
+    <p>Dice rolled 3</p>
+  }
+
+  @case (4) {
+    <p>Dice rolled 4</p>
+  }
+
+  @case (5) {
+    <p>Dice rolled 5</p>
+  }
+
+  @case (6) {
+    <p>Dice rolled 6</p>
+  }
+
+  @default {
+    <p>Roll the dice!</p>
+  }
+}
