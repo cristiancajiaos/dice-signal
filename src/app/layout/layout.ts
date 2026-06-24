@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, WritableSignal } from '@angular/core';
+import { Component, computed, OnInit, signal, WritableSignal } from '@angular/core';
 import { FontAwesomeModule, IconDefinition } from '@fortawesome/angular-fontawesome';
 import { faDice, faDiceFive, faDiceFour, faDiceOne, faDiceSix, faDiceThree, faDiceTwo } from '@fortawesome/free-solid-svg-icons';
 
@@ -28,6 +28,10 @@ export class Layout implements OnInit {
   public fourCount: WritableSignal<number> = signal(0);
   public fiveCount: WritableSignal<number> = signal(0);
   public sixCount: WritableSignal<number> = signal(0);
+
+  public totalCount = computed(() => {
+    return (this.oneCount() + this.twoCount() + this.threeCount() + this.fourCount() + this.fiveCount() + this.sixCount());
+  });
 
   ngOnInit(): void {
 
@@ -68,5 +72,15 @@ export class Layout implements OnInit {
         break;
       }
     }
+  }
+
+  public resetRolls(): void {
+    this.diceValue.set(0);
+    this.oneCount.set(0);
+    this.twoCount.set(0);
+    this.threeCount.set(0);
+    this.fourCount.set(0);
+    this.fiveCount.set(0);
+    this.sixCount.set(0);
   }
 }

@@ -60,4 +60,15 @@
   <div class="col-2">
     6 <fa-icon [icon]="diceSixIcon"></fa-icon>: {{sixCount()}}
   </div>
+  <div class="col-12">
+    <p>Total rolls: {{totalCount()}}</p>
+  </div>
 </div>
+
+<hr/>
+
+<button class="btn btn-danger" (click)="resetRolls()">
+  Reset rolls
+</button>
+
+
